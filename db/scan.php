@@ -2,6 +2,7 @@
 header('Content-Type: application/json; charset=utf-8');
 $dir = '../images';
 $files  = scandir($dir);
+shuffle($files);
 $files = array_diff($files, array('.', '..'));
 
 $bd = new SQLite3('image_qualifier.db');
@@ -16,4 +17,4 @@ foreach($files as $key=>$name){
     if(!in_array($name,$voted))
         $f[]=$name;
 }
-print json_encode($f);
+print json_encode(($f));

@@ -45,7 +45,7 @@
 
       function update_image(){
           $('#myimage').attr('src',"images/"+data[current]);
-          $('#info').text((current+1)+"/"+data.length);
+          $('#info').text((current+1)+"/"+data.length+" "+data[current]);
       }
 
       $('body').on('keyup',function(e) {
